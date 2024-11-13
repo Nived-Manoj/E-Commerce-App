@@ -20,21 +20,6 @@ class ProductService {
     }
   }
 
-  // Delete
-  // Future<void> deleteProduct(int id) async {
-  //   try {
-  //     final response = await http.delete(Uri.parse('$_baseUrl/$id'));
-  //     print(response.body);
-  //     if (response.statusCode == 200) {
-  //       print('Product deleted successfully');
-  //     } else {
-  //       throw Exception('Failed to delete product');
-  //     }
-  //   } catch (error) {
-  //     throw Exception('Error deleting product: $error');
-  //   }
-  // }
-
   //Post
   Future<void> createProduct(String title, double price, String description,
       String category, String image) async {
