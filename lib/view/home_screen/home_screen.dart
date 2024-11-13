@@ -1,4 +1,5 @@
 import 'package:e_com_app/services/api_services.dart';
+import 'package:e_com_app/services/delete.dart';
 import 'package:e_com_app/view/add_product/add_item_screen.dart';
 import 'package:e_com_app/view/details_screen/details_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,22 +19,17 @@ class _HomeScreenState extends State<HomeScreen> {
     _productList = _productService.fetchProducts();
   }
 
-  Future<void> _deleteProduct(int id) async {
+  Future<void> _deleteProduct(int productId) async {
+    final deleteService = DeleteService();
+
     try {
-      final isConfirmed = await _showDeleteConfirmationDialog();
-      if (isConfirmed) {
-        await _productService.deleteProduct(id);
-        setState(() {
-          _productList = _productService.fetchProducts();
-        });
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Product deleted successfully!')),
-        );
-      }
-    } catch (error) {
+      await deleteService.deleteProduct(productId);
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Failed to delete product: $error')),
+        SnackBar(content: Text('Product deleted successfully')),
       );
+      print('Product deleted successfully');
+    } catch (error) {
+      print(error);
     }
   }
 
