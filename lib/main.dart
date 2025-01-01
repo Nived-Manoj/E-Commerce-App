@@ -1,3 +1,4 @@
+import 'package:e_com_app/view/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:e_com_app/view/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(body: HomeScreen()),
+      home: Scaffold(body: BottomNavBar()),
     );
   }
 }
