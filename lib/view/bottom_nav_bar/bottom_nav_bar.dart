@@ -1,3 +1,5 @@
+import 'package:e_com_app/view/cart/cart_screen.dart';
+import 'package:e_com_app/view/favuorites/favourite_screen.dart';
 import 'package:e_com_app/view/home_screen/home_screen.dart';
 import 'package:e_com_app/view/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -12,8 +14,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   final List<Widget> _pages = [
     HomeScreen(),
-    Center(child: Text('Favorites', style: TextStyle(fontSize: 24))),
-    Center(child: Text('Cart', style: TextStyle(fontSize: 24))),
+    FavouriteScreen(),
+    CartScreen(),
     ProfileScreen(),
   ];
 
